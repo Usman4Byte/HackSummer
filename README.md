@@ -77,19 +77,6 @@ they reliably reproduce the block and the fabrication on every run.
 
 <br/>
 
-## Deploy on Replit
-
-1. **Import from GitHub** (or upload this folder) into a new Repl — `.replit` / `replit.nix`
-   provision Node 20 automatically.
-2. Add `GEMINI_API_KEY` under the Repl's **Secrets** tab (optional).
-3. Hit **Run** — builds with `npm ci && npm run build`, serves with `npm run start` bound to the
-   Replit-assigned `$PORT`.
-4. Click **Deploy → Autoscale** for a stable public URL.
-
-Audit records persist to Replit DB automatically when `REPLIT_DB_URL` is present; otherwise an
-in-memory ring buffer keeps the session going locally.
-
-<br/>
 
 ## How it's built
 

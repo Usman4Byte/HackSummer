@@ -26,7 +26,7 @@ export function Header({ sentinelOn, onToggle }: Props) {
               style={{ transform: "rotate(45deg)" }}
             />
           </div>
-          <div className="text-[16px] font-semibold tracking-tight">Sentinel</div>
+          <div className="text-[16px] font-semibold tracking-tight">Verity</div>
           <div className="rounded-full bg-[rgba(107,100,85,0.08)] px-2 py-[3px] text-[11px] font-medium text-muted">
             trust layer · demo
           </div>
@@ -50,7 +50,7 @@ export function Header({ sentinelOn, onToggle }: Props) {
             className="text-[13px] font-medium"
             style={{ color: toggleLabelColor }}
           >
-            Sentinel: {label}
+            Verity: {label}
           </span>
           <span
             className="relative inline-block h-5 w-[34px] rounded-full transition-colors"

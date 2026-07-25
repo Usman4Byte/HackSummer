@@ -27,7 +27,7 @@ export function AuditTrailPanel({ audit }: Props) {
       <div className="flex flex-col">
         {audit.length === 0 ? (
           <div className="text-[12px] italic text-muted">
-            No governance events recorded — Sentinel was off.
+            No governance events recorded — Verity was off.
           </div>
         ) : (
           audit.map((e, i) => {

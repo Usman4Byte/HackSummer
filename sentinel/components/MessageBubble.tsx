@@ -73,7 +73,7 @@ function AgentBubble({ msg }: { msg: Message }) {
             <div className="text-[13px] font-semibold">Agent</div>
             <div className="text-[11px] text-muted">
               {hasTrust ? (
-                <>Sentinel governed · {claims.length} claims · {reads.length} sources · {actions.length} tool calls</>
+                <>Verity governed · {claims.length} claims · {reads.length} sources · {actions.length} tool calls</>
               ) : (
                 "Raw response"
               )}

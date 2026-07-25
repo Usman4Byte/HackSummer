@@ -88,7 +88,7 @@ export function Composer({ sentinelOn, onSend, onScenario, onClear, busy }: Prop
           </button>
         </form>
         <div className="mt-2 text-center text-[11px] text-muted">
-          Sentinel is {sentinelOn ? "on" : "off"} ·{" "}
+          Verity is {sentinelOn ? "on" : "off"} ·{" "}
           {sentinelOn ? (
             <span className="font-medium text-good">answers are governed &amp; scored</span>
           ) : (

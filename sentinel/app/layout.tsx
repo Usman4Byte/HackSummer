@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sentinel — trust layer for AI agents",
+  title: "Verity — trust layer for AI agents",
   description:
     "Chat with an agent you can verify. Every answer is scored, sources are scanned, and every tool call passes through a firewall.",
 };

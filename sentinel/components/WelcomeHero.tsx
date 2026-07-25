@@ -11,7 +11,7 @@ export function WelcomeHero() {
       <p className="m-0 mb-3.5 text-[15px] leading-relaxed text-muted">
         Every answer is scored for confidence, the sources it read are checked for
         prompt injection, and every tool the agent tries to run passes through a
-        firewall. Toggle Sentinel off to see the raw agent for contrast.
+        firewall. Toggle Verity off to see the raw agent for contrast.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="rounded-full bg-[rgba(107,100,85,0.08)] px-2.5 py-1.5 text-[12px] text-muted">

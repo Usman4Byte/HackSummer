@@ -19,13 +19,13 @@ function UserBubble({ text }: { text: string }) {
   return (
     <div className="flex w-full flex-col items-end">
       <div
-        className="max-w-[78%] px-4 py-3 text-[15px] leading-relaxed"
+        className="max-w-[85%] px-4 py-3 text-[14px] leading-relaxed sm:max-w-[78%] sm:text-[15px]"
         style={{
           background: "linear-gradient(135deg, rgba(252,224,205,0.7), rgba(248,208,180,0.55))",
           WebkitBackdropFilter: "blur(22px) saturate(140%)",
           backdropFilter: "blur(22px) saturate(140%)",
           border: "1px solid rgba(255,255,255,0.75)",
-          borderRadius: "20px 20px 6px 20px",
+          borderRadius: "18px 18px 5px 18px",
           boxShadow: "0 8px 24px rgba(200,120,70,0.10)",
         }}
       >
@@ -52,13 +52,13 @@ function AgentBubble({ msg }: { msg: Message }) {
   return (
     <div className="flex w-full flex-col items-start">
       <div
-        className="w-full max-w-[92%] overflow-hidden"
+        className="w-full overflow-hidden sm:max-w-[92%]"
         style={{
           background: "rgba(255,255,255,0.65)",
           WebkitBackdropFilter: "blur(22px) saturate(140%)",
           backdropFilter: "blur(22px) saturate(140%)",
           border: "1px solid rgba(255,255,255,0.75)",
-          borderRadius: "20px 20px 20px 6px",
+          borderRadius: "18px 18px 18px 5px",
           boxShadow: "0 8px 32px rgba(120,90,60,0.10)",
         }}
       >
@@ -69,9 +69,9 @@ function AgentBubble({ msg }: { msg: Message }) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="text-[13px] font-semibold">Agent</div>
-            <div className="text-[11px] text-muted">
+            <div className="truncate text-[11px] text-muted">
               {hasTrust ? (
-                <>Verity governed · {claims.length} claims · {reads.length} sources · {actions.length} tool calls</>
+                <>Verity governed · {claims.length} claims · {reads.length} sources · {actions.length} calls</>
               ) : (
                 "Raw response"
               )}
@@ -81,7 +81,7 @@ function AgentBubble({ msg }: { msg: Message }) {
         </div>
 
         {/* Answer */}
-        <div className="px-4 pb-3.5 text-[15px] leading-[1.65]">
+        <div className="px-4 pb-3.5 text-[14px] leading-[1.65] sm:text-[15px]">
           <ClaimSpans claims={displayClaims} painted={hasTrust} />
         </div>
 
@@ -94,38 +94,33 @@ function AgentBubble({ msg }: { msg: Message }) {
             <button
               onClick={() => setExpanded((v) => !v)}
               aria-expanded={expanded}
-              className="flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[12px] font-medium text-muted"
+              className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-[11px] font-medium text-muted sm:gap-2.5 sm:text-[12px]"
             >
               <svg
-                width={12}
-                height={12}
+                width={11}
+                height={11}
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2.4}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                style={{ transform: `rotate(${expanded ? 90 : 0}deg)`, transition: "transform 180ms ease" }}
+                style={{ transform: `rotate(${expanded ? 90 : 0}deg)`, transition: "transform 180ms ease", flexShrink: 0 }}
               >
                 <polyline points="9 18 15 12 9 6" />
               </svg>
-              Trust details
-              <span className="font-semibold text-ink">·</span>
-              <span>Input Shield</span>
-              <span className="font-semibold text-ink">·</span>
-              <span>Action Firewall</span>
-              <span className="font-semibold text-ink">·</span>
-              <span>Audit trail</span>
+              <span className="hidden sm:inline">Trust details · Input Shield · Action Firewall · Audit trail</span>
+              <span className="sm:hidden">Trust details</span>
               <span className="flex-1" />
               {hasFlagged && (
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-badBg px-2 py-0.5 text-[11px] font-medium text-badText">
+                <span className="inline-flex items-center gap-1 rounded-full bg-badBg px-2 py-0.5 text-[10px] font-medium text-badText sm:gap-1.5 sm:text-[11px]">
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-bad" />
-                  1 injection flagged
+                  injection
                 </span>
               )}
             </button>
             {expanded && (
-              <div className="flex flex-col gap-3 px-3.5 pb-4 pt-1.5">
+              <div className="flex flex-col gap-3 px-3 pb-4 pt-1.5 sm:px-3.5">
                 <InputShieldPanel reads={reads} />
                 <ActionFirewallPanel actions={actions} />
                 <AuditTrailPanel audit={audit} />

@@ -6,15 +6,16 @@ interface Props {
   onScenario: (kind: "injection" | "truth") => void;
   onClear: () => void;
   busy: boolean;
+  sidebarOpen?: boolean;
 }
 
-export function Composer({ sentinelOn, onSend, onScenario, onClear, busy }: Props) {
+export function Composer({ sentinelOn, onSend, onScenario, onClear, busy, sidebarOpen }: Props) {
   const [draft, setDraft] = useState("");
   const canSend = draft.trim().length > 0 && !busy;
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-[15] px-3 pb-[env(safe-area-inset-bottom,12px)] pt-3 sm:px-5 sm:pb-5 sm:pt-3.5"
+      className={`fixed bottom-0 right-0 z-[15] px-3 pb-[env(safe-area-inset-bottom,12px)] pt-3 sm:px-5 sm:pb-5 sm:pt-3.5 transition-[left] duration-300 ${sidebarOpen ? "left-[272px]" : "left-0"}`}
       style={{
         paddingBottom: `max(env(safe-area-inset-bottom, 0px) + 12px, 12px)`,
         background:

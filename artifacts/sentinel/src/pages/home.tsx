@@ -146,7 +146,7 @@ export default function Home() {
       />
 
       {/* Main area — offset on large screens to account for sidebar */}
-      <div className="flex min-h-screen flex-1 flex-col transition-all duration-300 lg:ml-[272px]">
+      <div className={`flex min-h-screen flex-1 flex-col transition-all duration-300 ${sidebarOpen ? "lg:ml-[272px]" : ""}`}>
         <Header
           sentinelOn={sentinelOn}
           onToggle={() => setSentinelOn((v) => !v)}
@@ -174,6 +174,7 @@ export default function Home() {
           onSend={(text) => run({ prompt: text })}
           onScenario={(kind) => run({ scenario: kind })}
           onClear={() => setMessages([])}
+          sidebarOpen={sidebarOpen}
         />
       </div>
     </div>

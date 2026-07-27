@@ -85,7 +85,7 @@ export function Sidebar({ open, onClose, stats, activity, sentinelOn }: Props) {
 
       {/* Sidebar panel */}
       <aside
-        className="fixed left-0 top-0 z-30 flex h-full w-[272px] flex-col overflow-y-auto transition-transform duration-300"
+        className="sidebar-scroll fixed left-0 top-0 z-30 flex h-full w-[272px] flex-col overflow-y-auto transition-transform duration-300"
         style={{
           background: "rgba(253,247,242,0.96)",
           backdropFilter: "blur(24px) saturate(150%)",
